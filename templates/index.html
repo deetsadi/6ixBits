@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+</head>
+
+<body>
+	<div class="FileUpload">
+		<div class="wrapper">
+			<div class="upload">
+				<form class="form" action="" method="POST" enctype="multipart/form-data">
+					<div class="input">
+						<input type="file" id="real-file" name="img" hidden="hidden" accept="image/png, .jpeg, .jpg" required>
+          <button class="upl" type="button" id="custom-button">Choose file</button>
+            
+          <label class="submitbtn">
+          <input type="submit" id="subbutton" value="Submit">
+          Submit
+          </label>
+        </form>
+      </div>
+    </div>
+    <div class="uploaded uploaded--one">
+      <i class="far fa-file-pdf"></i>
+      <div class="file">
+        <div class="file__name">
+          <span id="custom-text">No file chosen</span>
+        </div>
+          <script type="text/javascript">
+          const realFileBtn = document.getElementById("real-file");
+          const customBtn = document.getElementById("custom-button");
+          const customTxt = document.getElementById("custom-text");
+
+          customBtn.addEventListener("click", function() {
+            realFileBtn.click();
+          });
+
+          realFileBtn.addEventListener("change", function() {
+            if (realFileBtn.value) {
+              customTxt.innerHTML = realFileBtn.value.match(
+                /[\/\\]([\w\d\s\.\-\(\)]+)$/
+              )[1];
+            } else {
+              customTxt.innerHTML = "No file chosen";
+            }
+          });
+          </script>
+      </div>
+    </div>
+  </div>
+  <div class="Results">
+    <div class="uploaded uploaded--one">
+      <i class="far fa-file-pdf"></i>
+      <div class="file">
+        <div class="file__name">
+          {% if r == "Please submit an image" %}
+          <span id="results">{{r}}</span>
+          {% else %}
+          <span id="results">Results: {{r}}</span>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {% if data|length < 1 %}
+
+  {% else %}
+
+  <table class="content-table">
+    <thead>
+      <tr>
+        <th>File Name</th>
+        <th>Result</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for d in data %}
+      <tr>
+        <td>{{ d.name }}</td>
+        <td>{{ d.result }}</td>
+        <td>
+          <a href="/delete/{{d.id}}">Delete</a>
+        </td>
+      </tr>
+    {% endfor %}
+  </tbody>
+  </table>
+  {% endif %}
+
+</body>
+</html>

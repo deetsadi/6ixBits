@@ -1,0 +1,183 @@
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(to right, #0cebeb, #20e3b2, #29ffc6);
+  transition: 10s;  
+}
+
+.FileUpload {
+  position: absolute;
+  width: 500px;
+  top: 49%;
+  left: 49%;
+  margin: -350px 0 0 -240px;
+}
+
+.Results {
+  /* display: flex;
+  justify-content: center; */
+  position: absolute;
+  width: 400px;
+  margin-left: 25px;
+  padding: 18px;
+  /* top: 15em;
+  right: 28em; */
+}
+
+
+.wrapper {
+  margin: 30px;
+  padding: 10px;
+  box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+  border-radius: 10px;
+  background-color: white;
+  width: 415px;
+}
+
+.upload {
+  margin: 10px;
+  height: 85px;
+  border: 8px dashed #e6f5e9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+}
+.upload p {
+  margin-top: 12px;
+  line-height: 0;
+  font-size: 22px;
+  color: #0c3214;
+  letter-spacing: 1.5px;
+  font-family: 'Montserrat', sans-serif;
+
+}
+
+.upload__button {
+  background-color: #e6f5e9;
+  border-radius: 10px;
+  padding: 0px 8px 0px 10px;
+}
+.upload__button:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+#results{
+  font-size: 20px;
+  text-align:center;
+  color:black;
+}
+
+.uploaded {
+  width: 375px;
+  margin: 10px;
+  background-color: #e6f5e9;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.file {
+  display: flex;
+  flex-direction: column;
+}
+.file__name {
+  text-align: center;
+  /* display: flex; */
+  /* flex-direction: row; */
+  justify-content: space-between;
+  /* align-items: baseline; */
+  width: 300px;
+  color: #0c3214;
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.fa-times:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.fa-file-pdf {
+  padding: 15px;
+  font-size: 20px;
+  color: #0c3214;
+}
+
+#custom-button, .submitbtn {
+  border-radius: 10px;
+  margin-bottom: 10px;
+  font-size: 15px;
+  padding: 10px;
+  color: #20e3b2;
+  font-family: 'Montserrat', sans-serif;
+  background: white;
+  border: 1px solid #20e3b2;
+  align-self: center;
+}
+
+input[type="submit"] {
+    display: none;
+}
+
+@keyframes fade {
+    from {background-color: white; color: #20e3b2; border: 1px solid #20e3b2;}
+    to {background-color: #20e3b2; color: white; border: 1px solid #20e3b2}    
+    
+}
+#custom-button:hover, .submitbtn:hover {
+    cursor: pointer;
+    background-color: #20e3b2;
+    color: white;
+    animation-name: fade;
+    animation-duration: 1s;
+}
+
+#custom-text {
+  margin-left: 0px;
+  margin-top: 5px;
+  font-family: sans-serif;
+  color: black;
+}
+
+.content-table{
+  position: relative;
+  margin: 0 auto;
+  margin-top: 180px;
+  padding: 18px;
+  border-collapse: collapse;
+  min-width: 400px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+}
+
+.content-table thead tr {
+  background-color: #009879;
+  color: white;
+  text-align: left;
+  font-weight: bold;
+}
+
+.content-table th, .content-table td{
+  padding: 12px 15px;
+}
+
+.content-table tbody tr{
+  border-bottom: 1px solid #dddddd;
+}
+
+.content-table tbody tr:nth-of-type(even){
+  background-color:lightgray;
+}
+
+.content-table tbody tr:last-of-type{
+  border-bottom: 2px solid #009879
+}
+
+.content-table tbody tr:nth-of-type(odd){
+  background-color: white;
+}
